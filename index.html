@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-    content="Personal home page for WDD 131 Dynamic Web Fundamentals demonstrating semantic HTML, modern CSS layout, accessibility, and JavaScript fundamentals.">
+    content="Personal home page for WDD 131 Dynamic Web Fundamentals demonstrating semantic HTML, modern CSS, accessibility, and JavaScript.">
 
   <meta name="author" content="Takudzwa P. Matimura">
 
   <title>WDD 131 – Dynamic Web Fundamentals – Takudzwa P. Matimura</title>
 
-  <!-- Google Fonts (Required) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -38,10 +38,11 @@
 <main>
   <h1>Takudzwa P. Matimura</h1>
 
-  <section class="content-grid">
+  <!-- NOTE: div used instead of section because no heading is needed -->
+  <div class="content-grid">
 
     <section class="card">
-      <h3>About Me</h3>
+      <h2>About Me</h2>
 
       <div class="about-layout">
         <p>
@@ -54,12 +55,13 @@
       </div>
 
       <div class="location">
-        <h4>Harare, Zimbabwe</h4>
+        <h3>Harare, Zimbabwe</h3>
+
         <div class="location-info">
           <img
-  src="images/zimbabwe-flag.png"
-  alt="Flag of Zimbabwe"
-  class="flag">
+            src="images/zimbabwe-flag.png"
+            alt="Flag of Zimbabwe"
+            class="flag">
 
           <p>
             Zimbabwe is known for its diverse landscapes, including mountains,
@@ -70,7 +72,7 @@
     </section>
 
     <section class="card">
-      <h3>Web Dev Resources</h3>
+      <h2>Web Dev Resources</h2>
       <ul class="resources">
         <li><a href="https://dev.to/" target="_blank">Dev.to Community</a></li>
         <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
@@ -80,7 +82,7 @@
       </ul>
     </section>
 
-  </section>
+  </div>
 </main>
 
 <footer>
