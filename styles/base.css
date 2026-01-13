@@ -9,12 +9,16 @@ html {
   box-sizing: border-box;
 }
 
-/* COLOR SYSTEM – AA COMPLIANT */
+/* COLOR SYSTEM */
 :root {
   --primary: #1f3b57;
   --secondary: #274b6d;
   --accent: #2563eb;
+
+  /* utility colors (not body defaults) */
   --light: #f8fafc;
+
+  /* dark-mode overlay */
   --dark-overlay: rgba(8, 18, 30, 0.94);
 }
 
@@ -23,14 +27,18 @@ header {
   display: block;
 }
 
-/* BODY WITH MOUNTAIN BACKGROUND */
+/* BODY — DARK MODE DEFAULT (AA SAFE) */
 body {
   font-family: "Inter", sans-serif;
+
+  /* Explicit dark-mode text color (NOT var(--light)) */
+  color: #f8fafc;
+
   background:
     linear-gradient(var(--dark-overlay), var(--dark-overlay)),
     url("https://images.unsplash.com/photo-1501785888041-af3ef285b470")
     center / cover no-repeat fixed;
-  color: var(--light);
+
   min-height: 100vh;
 }
 
@@ -76,12 +84,17 @@ body {
   border-radius: 20px;
   border: 1px solid var(--accent);
   background: transparent;
-  color: var(--light);
+  color: #f8fafc;
   cursor: pointer;
 }
 
 #themeToggle:hover {
   background-color: var(--accent);
+}
+
+#themeToggle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* MAIN */
@@ -182,16 +195,13 @@ footer {
   margin-top: 3rem;
 }
 
-/* LIGHT MODE — CONSOLIDATED & WCAG AA COMPLIANT */
+/* =====================================================
+   LIGHT MODE — SINGLE CONSOLIDATED RULE (AA COMPLIANT)
+   ===================================================== */
+
 body.light-mode {
   background: #ffffff;
   color: #0f172a;
-
-  --primary: #e2e8f0;
-  --secondary: #cbd5e1;
-  --accent: #1d4ed8;
-  --light: #0f172a;
-  --dark-overlay: rgba(255, 255, 255, 0.92);
 }
 
 /* Light mode cards */
@@ -207,7 +217,7 @@ body.light-mode h3 {
   color: #020617;
 }
 
-/* Light mode links */
+/* Light mode resource links */
 body.light-mode .resources a {
   color: #1d4ed8;
 }
