@@ -195,3 +195,27 @@ body.light-mode {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
+
+/* LIGHT MODE — WCAG AA FIX */
+body.light-mode {
+  background: #ffffff;     /* solid background */
+  color: #0f172a;          /* dark text */
+}
+
+/* Ensure cards remain readable in light mode */
+body.light-mode .card {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+}
+
+/* Headings in light mode */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+  color: #020617;
+}
+
+/* Links in light mode */
+body.light-mode .resources a {
+  color: #1d4ed8;
+}
