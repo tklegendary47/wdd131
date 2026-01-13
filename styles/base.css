@@ -182,8 +182,11 @@ footer {
   margin-top: 3rem;
 }
 
-/* LIGHT MODE */
+/* LIGHT MODE — CONSOLIDATED & WCAG AA COMPLIANT */
 body.light-mode {
+  background: #ffffff;
+  color: #0f172a;
+
   --primary: #e2e8f0;
   --secondary: #cbd5e1;
   --accent: #1d4ed8;
@@ -191,31 +194,20 @@ body.light-mode {
   --dark-overlay: rgba(255, 255, 255, 0.92);
 }
 
-#themeToggle:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
-}
-
-/* LIGHT MODE — WCAG AA FIX */
-body.light-mode {
-  background: #ffffff;     /* solid background */
-  color: #0f172a;          /* dark text */
-}
-
-/* Ensure cards remain readable in light mode */
+/* Light mode cards */
 body.light-mode .card {
   background-color: rgba(255, 255, 255, 0.9);
   color: #0f172a;
 }
 
-/* Headings in light mode */
+/* Light mode headings */
 body.light-mode h1,
 body.light-mode h2,
 body.light-mode h3 {
   color: #020617;
 }
 
-/* Links in light mode */
+/* Light mode links */
 body.light-mode .resources a {
   color: #1d4ed8;
 }
