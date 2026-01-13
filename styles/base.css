@@ -14,11 +14,6 @@ html {
   --primary: #1f3b57;
   --secondary: #274b6d;
   --accent: #2563eb;
-
-  /* utility colors (not body defaults) */
-  --light: #f8fafc;
-
-  /* dark-mode overlay */
   --dark-overlay: rgba(8, 18, 30, 0.94);
 }
 
@@ -27,18 +22,14 @@ header {
   display: block;
 }
 
-/* BODY — DARK MODE DEFAULT (AA SAFE) */
+/* BODY — DARK THEME (AA SAFE) */
 body {
   font-family: "Inter", sans-serif;
-
-  /* Explicit dark-mode text color (NOT var(--light)) */
   color: #f8fafc;
-
   background:
     linear-gradient(var(--dark-overlay), var(--dark-overlay)),
     url("https://images.unsplash.com/photo-1501785888041-af3ef285b470")
     center / cover no-repeat fixed;
-
   min-height: 100vh;
 }
 
@@ -74,27 +65,6 @@ body {
 
 .main-nav a:hover {
   background-color: var(--accent);
-  color: #ffffff;
-}
-
-/* THEME BUTTON */
-#themeToggle {
-  margin-top: 1rem;
-  padding: 0.4rem 0.9rem;
-  border-radius: 20px;
-  border: 1px solid var(--accent);
-  background: transparent;
-  color: #f8fafc;
-  cursor: pointer;
-}
-
-#themeToggle:hover {
-  background-color: var(--accent);
-}
-
-#themeToggle:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
 }
 
 /* MAIN */
@@ -162,7 +132,6 @@ h1 {
 
 .flag {
   width: 60px;
-  height: auto;
   border: 1px solid #ffffff;
   border-radius: 4px;
 }
@@ -193,31 +162,4 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 3rem;
-}
-
-/* =====================================================
-   LIGHT MODE — SINGLE CONSOLIDATED RULE (AA COMPLIANT)
-   ===================================================== */
-
-body.light-mode {
-  background: #ffffff;
-  color: #0f172a;
-}
-
-/* Light mode cards */
-body.light-mode .card {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #0f172a;
-}
-
-/* Light mode headings */
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode h3 {
-  color: #020617;
-}
-
-/* Light mode resource links */
-body.light-mode .resources a {
-  color: #1d4ed8;
 }
