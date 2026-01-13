@@ -1,24 +1,17 @@
-// Dynamic Year
-document.getElementById("currentyear").textContent =
-  new Date().getFullYear();
+const yearSpan = document.getElementById("currentyear");
+const modified = document.getElementById("lastModified");
+const toggle = document.getElementById("themeToggle");
 
-// Last Modified
-document.getElementById("lastModified").textContent =
-  `Last Modification: ${document.lastModified}`;
+// Footer dates
+yearSpan.textContent = new Date().getFullYear();
+modified.textContent = `Last Modified: ${document.lastModified}`;
 
-// Dark / Light Mode Toggle
-const toggleButton = document.getElementById("themeToggle");
-const body = document.body;
+// Theme toggle (dark ↔ light)
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
 
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-  body.classList.add("light-mode");
-  toggleButton.textContent = "☀️";
-}
-
-toggleButton.addEventListener("click", () => {
-  body.classList.toggle("light-mode");
-  const isLight = body.classList.contains("light-mode");
-  toggleButton.textContent = isLight ? "☀️" : "🌙";
-  localStorage.setItem("theme", isLight ? "light" : "dark");
+  // Update icon based on current mode
+  toggle.textContent = document.body.classList.contains("light-mode")
+    ? "🌙"  // switch to dark
+    : "☀️"; // switch to light
 });
