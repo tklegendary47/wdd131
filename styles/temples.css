@@ -36,13 +36,17 @@ footer {
 
 /* ===== HERO ===== */
 .hero {
-  position: relative;
   height: 70vh;
-  background: url("../images/temple-hero.jpg") center / cover no-repeat;
+  background-image: url("../images/temple-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+ background-attachment: fixed;
 }
+
 
 .hero-overlay {
   position: absolute;
@@ -56,10 +60,16 @@ footer {
 
 .hero-content {
   position: relative;
-  color: #f3ead8;
+  color: #ffff;
   text-align: center;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
 .hero h2 {
   font-size: 3rem;
   letter-spacing: 2px;
@@ -164,10 +174,6 @@ figcaption {
   }
 }
 
-.hero {
-  background-attachment: fixed;
-}
-
 /* ===== MOBILE VIEW ONLY ===== */
 @media (max-width: 768px) {
 
@@ -196,5 +202,11 @@ figcaption {
   nav {
     background-color: var(--primary);
   }
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
