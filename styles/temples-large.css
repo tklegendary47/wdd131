@@ -1,12 +1,13 @@
 @media (min-width: 800px) {
 
   main {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
   }
 
   .gallery {
     grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
   }
 
 }
