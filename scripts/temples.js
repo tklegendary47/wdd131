@@ -1,4 +1,7 @@
-// Footer last modified
+
+document.addEventListener("DOMContentLoaded", () => {
+ 
+  // Footer last modified
 document.getElementById("lastModified").textContent = document.lastModified;
 
 // Intersection Observer for reveal animations
@@ -100,4 +103,5 @@ window.addEventListener("scroll", () => {
 
   // Background depth layer
   parallaxLayer.style.transform = `translateY(${scrollY * 0.15}px)`;
+});
 });
