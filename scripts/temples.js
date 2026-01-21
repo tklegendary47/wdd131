@@ -81,7 +81,8 @@ filterButtons.forEach(button => {
       } else {
         temple.classList.remove("show");
         setTimeout(() => {
-          temple.style.display = "none";
+          temple.classList.add("hidden");
+
         }, 300);
       }
     });
