@@ -35,6 +35,12 @@ footer {
   text-align: center;
 }
 
+footer,
+footer p,
+footer a {
+  color: #ffffff;
+}
+
 /* ===== HERO ===== */
 .hero {
   height: 70vh;
@@ -46,6 +52,7 @@ footer {
   align-items: center;
   justify-content: center;
  background-attachment: fixed;
+
 }
 
 
@@ -61,7 +68,7 @@ footer {
 
 .hero-content {
   position: relative;
-  color: #ffff;
+  color: #ffffff;
   text-align: center;
 }
 
