@@ -22,10 +22,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #ffffff;
 }
 
 nav a {
-  color: white;
+   color: #ffffff;
   text-decoration: none;
   margin-left: 1rem;
 }
