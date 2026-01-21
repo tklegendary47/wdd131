@@ -167,3 +167,34 @@ figcaption {
 .hero {
   background-attachment: fixed;
 }
+
+/* ===== MOBILE VIEW ONLY ===== */
+@media (max-width: 768px) {
+
+  .hero {
+    display: none;
+  }
+
+  .temple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  figcaption {
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  nav {
+    background-color: var(--primary);
+  }
+}
+
