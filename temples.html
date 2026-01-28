@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="author" content="Takudzwa P. Matimura">
-  <meta charset="UTF-8"> <meta
-  name="description"
-  content="A responsive temple photo gallery featuring sacred architecture, interactive filters, and scroll animations by Takudzwa P. Matimura."
->
-
+  <meta name="description" content="A responsive temple photo gallery">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Temple Album</title>
 
   <link rel="stylesheet" href="styles/temples.css">
   <link rel="stylesheet" href="styles/temples-large.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;600&display=swap"
-  rel="stylesheet"
->
-
 
   <script src="scripts/temples.js" defer></script>
 </head>
@@ -28,7 +18,12 @@
 
 <header>
   <h1>Temple Album</h1>
-  <nav>
+
+  <!-- Hamburger Button -->
+  <button id="menuBtn" aria-label="Toggle navigation">☰</button>
+
+  <!-- Navigation -->
+  <nav id="navMenu">
     <a href="#">Home</a>
     <a href="#">Old</a>
     <a href="#">New</a>
@@ -37,7 +32,7 @@
   </nav>
 </header>
 
-<!-- 🎬 HERO SECTION -->
+<!-- HERO SECTION -->
 <section class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -46,10 +41,10 @@
   </div>
 </section>
 
-<!-- 🌌 PARALLAX LAYER -->
+<!-- PARALLAX LAYER -->
 <div class="parallax"></div>
 
-<!-- 🎛 FILTER BUTTONS -->
+<!-- FILTER BUTTONS -->
 <section class="filters">
   <button class="active" data-filter="all">All</button>
   <button data-filter="old">Old</button>
@@ -58,23 +53,57 @@
   <button data-filter="small">Small</button>
 </section>
 
-
 <main>
   <section class="gallery">
-    <figure class="temple hidden" data-category="old"><img src="images/temple1.jpg" alt="Temple 1"><figcaption>Harare Zimbabwe Temple</figcaption></figure>
-    <figure class="temple hidden" data-category="new"><img src="images/temple2.jpg" alt="Temple 2"><figcaption>Harare Zimbabwe Temple</figcaption></figure>
-    <figure class="temple hidden" data-category="large" ><img src="images/temple3.jpg" alt="Temple 3"><figcaption>Harare Zimbabwe Temple</figcaption></figure>
-    <figure class="temple hidden" data-category="small"><img src="images/temple4.jpg" alt="Temple 4"><figcaption>Harare Zimbabwe Temple</figcaption></figure>
-    <figure class="temple hidden" data-category="old"><img src="images/temple5.jpg" alt="Temple 5"><figcaption>Harare Zimbabwe Temple</figcaption></figure>
-    <figure class="temple hidden" data-category="new"><img src="images/temple6.jpg" alt="Temple 6"><figcaption>Harare Zimbabwe Temple</figcaption></figure>
-    <figure class="temple hidden" data-category="large"><img src="images/temple7.jpg" alt="Temple 7"><figcaption>Harare Zimbabwe Temple</figcaption></figure>
-    <figure class="temple hidden" data-category="small"><img src="images/temple8.jpg" alt="Temple 8"><figcaption>Harare Zimbabwe Temple</figcaption></figure>
-    <figure class="temple hidden" data-category="old"><img src="images/temple9.jpg" alt="Temple 9"><figcaption>Harare Zimbabwe Temple</figcaption></figure>
+    <figure class="temple hidden" data-category="old">
+      <img src="images/temple1.jpg" alt="Temple 1">
+      <figcaption>Harare Zimbabwe Temple</figcaption>
+    </figure>
+
+    <figure class="temple hidden" data-category="new">
+      <img src="images/temple2.jpg" alt="Temple 2">
+      <figcaption>Harare Zimbabwe Temple</figcaption>
+    </figure>
+
+    <figure class="temple hidden" data-category="large">
+      <img src="images/temple3.jpg" alt="Temple 3">
+      <figcaption>Harare Zimbabwe Temple</figcaption>
+    </figure>
+
+    <figure class="temple hidden" data-category="small">
+      <img src="images/temple4.jpg" alt="Temple 4">
+      <figcaption>Harare Zimbabwe Temple</figcaption>
+    </figure>
+
+    <figure class="temple hidden" data-category="old">
+      <img src="images/temple5.jpg" alt="Temple 5">
+      <figcaption>Harare Zimbabwe Temple</figcaption>
+    </figure>
+
+    <figure class="temple hidden" data-category="new">
+      <img src="images/temple6.jpg" alt="Temple 6">
+      <figcaption>Harare Zimbabwe Temple</figcaption>
+    </figure>
+
+    <figure class="temple hidden" data-category="large">
+      <img src="images/temple7.jpg" alt="Temple 7">
+      <figcaption>Harare Zimbabwe Temple</figcaption>
+    </figure>
+
+    <figure class="temple hidden" data-category="small">
+      <img src="images/temple8.jpg" alt="Temple 8">
+      <figcaption>Harare Zimbabwe Temple</figcaption>
+    </figure>
+
+    <figure class="temple hidden" data-category="old">
+      <img src="images/temple9.jpg" alt="Temple 9">
+      <figcaption>Harare Zimbabwe Temple</figcaption>
+    </figure>
   </section>
 </main>
 
 <footer>
-  <p>©2026 Takudzwa P. Matimura — WDD 131</p>
+  <p>© <span id="currentYear"></span> Takudzwa P. Matimura — WDD 131</p>
   <p>Last Modification: <span id="lastModified"></span></p>
 </footer>
 

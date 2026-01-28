@@ -1,4 +1,4 @@
-/* ===== RESET & BASE ===== */
+/* ===== RESET ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +13,7 @@ body {
 
 /* ===== HEADER & FOOTER ===== */
 header, footer {
-  background-color: #5a6b63; /* warm slate */
+  background-color: #5a6b63;
   color: white;
   padding: 1rem;
 }
@@ -22,23 +22,43 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #ffffff;
-}
-
-nav a {
-   color: #ffffff;
-  text-decoration: none;
-  margin-left: 1rem;
+  position: relative;
 }
 
 footer {
   text-align: center;
 }
 
-footer,
-footer p,
-footer a {
-  color: #ffffff;
+/* ===== HAMBURGER BUTTON ===== */
+#menuBtn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== NAVIGATION (MOBILE FIRST) ===== */
+nav {
+  display: none;
+  flex-direction: column;
+  background-color: #5a6b63;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+/* OPEN STATE */
+nav.open {
+  display: flex;
 }
 
 /* ===== HERO ===== */
@@ -48,47 +68,22 @@ footer a {
   background-size: cover;
   background-position: center;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
- background-attachment: fixed;
-
 }
-
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.65)
-  );
+  background: rgba(0,0,0,0.45);
 }
 
 .hero-content {
   position: relative;
-  color: #ffffff;
+  color: white;
   text-align: center;
+  padding-top: 5rem;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-}
-.hero h2 {
-  font-size: 3rem;
-  letter-spacing: 2px;
-}
-
-.hero p {
-  margin-top: 1rem;
-  font-style: italic;
-}
-
-/* ===== PARALLAX BACKGROUND ===== */
+/* ===== PARALLAX ===== */
 .parallax {
   position: fixed;
   inset: 0;
@@ -96,7 +91,7 @@ footer a {
   z-index: -1;
 }
 
-/* ===== FILTER BUTTONS ===== */
+/* ===== FILTERS ===== */
 .filters {
   display: flex;
   justify-content: center;
@@ -109,12 +104,6 @@ footer a {
   border: none;
   background: #cbbfa8;
   cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.filters button:hover {
-  transform: translateY(-3px);
-  background: #b9ab91;
 }
 
 .filters .active {
@@ -142,18 +131,14 @@ figcaption {
   text-align: center;
   margin-top: 0.6rem;
   font-style: italic;
-  color: #5a6b63;
 }
 
-/* ===== SCROLL ANIMATION ===== */
+/* ===== ANIMATION ===== */
 .hidden {
   opacity: 0;
   transform: scale(0.85) translateY(30px);
   filter: blur(8px);
-  transition:
-    opacity 0.8s ease-out,
-    transform 0.8s ease-out,
-    filter 0.8s ease-out;
+  transition: 0.8s ease;
 }
 
 .show {
@@ -162,59 +147,25 @@ figcaption {
   filter: blur(0);
 }
 
-/* ===== STAGGERED DELAYS ===== */
-.temple:nth-child(1) { transition-delay: 0ms; }
-.temple:nth-child(2) { transition-delay: 120ms; }
-.temple:nth-child(3) { transition-delay: 240ms; }
-.temple:nth-child(4) { transition-delay: 0ms; }
-.temple:nth-child(5) { transition-delay: 120ms; }
-.temple:nth-child(6) { transition-delay: 240ms; }
-.temple:nth-child(7) { transition-delay: 0ms; }
-.temple:nth-child(8) { transition-delay: 120ms; }
-.temple:nth-child(9) { transition-delay: 240ms; }
-
-/* ===== ACCESSIBILITY ===== */
-@media (prefers-reduced-motion: reduce) {
-  .hidden {
-    transition: none;
-    transform: none;
-    filter: none;
-  }
-}
-
-/* ===== MOBILE VIEW ONLY ===== */
-@media (max-width: 768px) {
-
-  .hero {
+/* ===== DESKTOP VIEW ===== */
+@media (min-width: 800px) {
+  #menuBtn {
     display: none;
   }
 
-  .temple-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  figcaption {
-    text-align: center;
-    font-weight: 600;
-    color: var(--primary);
-  }
-
   nav {
-    background-color: var(--primary);
+    display: flex;
+    position: static;
+    flex-direction: row;
+    width: auto;
+  }
+
+  nav a {
+    margin-left: 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
   }
 }
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-

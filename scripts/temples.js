@@ -1,107 +1,58 @@
-
 document.addEventListener("DOMContentLoaded", () => {
- 
-  // Footer last modified
-document.getElementById("lastModified").textContent = document.lastModified;
 
-// Intersection Observer for reveal animations
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
-  });
-});
+  // ===== FOOTER DATES =====
+  const yearSpan = document.getElementById("currentYear");
+  const lastModSpan = document.getElementById("lastModified");
 
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 
-/* ===== PARTICLE BACKGROUND ===== */
-const canvas = document.createElement("canvas");
-canvas.style.position = "fixed";
-canvas.style.top = 0;
-canvas.style.left = 0;
-canvas.style.zIndex = -2;
-document.body.appendChild(canvas);
+  if (lastModSpan) {
+    lastModSpan.textContent = document.lastModified;
+  }
 
-const ctx = canvas.getContext("2d");
-let particles = [];
+  // ===== HAMBURGER MENU =====
+  const menuBtn = document.getElementById("menuBtn");
+  const navMenu = document.getElementById("navMenu");
 
-function resize() {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+  }
 
-for (let i = 0; i < 70; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dy: Math.random() * 0.4 + 0.1
-  });
-}
-
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "rgba(160,140,100,0.35)";
-
-  particles.forEach(p => {
-    p.y += p.dy;
-    if (p.y > canvas.height) p.y = 0;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animateParticles);
-}
-animateParticles();
-
-/* ===== FILTER FUNCTIONALITY ===== */
-const filterButtons = document.querySelectorAll(".filters button");
-const temples = document.querySelectorAll(".temple");
-
-filterButtons.forEach(button => {
-  button.addEventListener("click", () => {
-
-    // Active button styling
-    filterButtons.forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
-
-    const filter = button.dataset.filter;
-
-    temples.forEach(temple => {
-      const category = temple.dataset.category;
-
-      if (filter === "all" || category === filter) {
-        temple.style.display = "block";
-        requestAnimationFrame(() => {
-          temple.classList.add("show");
-        });
-      } else {
-        temple.classList.remove("show");
-        setTimeout(() => {
-          temple.style.display = "none";
-        }, 300);
+  // ===== SCROLL REVEAL =====
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
       }
     });
   });
-});
 
-/* ===== SCROLL-LINKED PARALLAX ===== */
-const hero = document.querySelector(".hero");
-const parallaxLayer = document.querySelector(".parallax");
+  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
+  // ===== FILTER BUTTONS =====
+  const filterButtons = document.querySelectorAll(".filters button");
+  const temples = document.querySelectorAll(".temple");
 
-  // Hero cinematic motion
-  hero.style.backgroundPositionY = `${scrollY * 0.4}px`;
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
 
-  // Background depth layer
-  parallaxLayer.style.transform = `translateY(${scrollY * 0.15}px)`;
-});
+      const filter = button.dataset.filter;
+
+      temples.forEach(temple => {
+        if (filter === "all" || temple.dataset.category === filter) {
+          temple.style.display = "block";
+          temple.classList.add("show");
+        } else {
+          temple.style.display = "none";
+        }
+      });
+    });
+  });
+
 });
