@@ -1,8 +1,29 @@
 
 document.addEventListener("DOMContentLoaded", () => {
  
+  // Dynamic year
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
   // Footer last modified
 document.getElementById("lastModified").textContent = document.lastModified;
+
+
+ // ===== HAMBURGER MENU =====
+  const menuBtn = document.getElementById("menuBtn");
+  const navMenu = document.getElementById("navMenu");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+    menuBtn.classList.toggle("open");
+
+    // change icon ☰ ↔ ✖
+    if (menuBtn.classList.contains("open")) {
+      menuBtn.textContent = "✖";
+    } else {
+      menuBtn.textContent = "☰";
+    }
+  });
+
+
 
 // Intersection Observer for reveal animations
 const observer = new IntersectionObserver(entries => {

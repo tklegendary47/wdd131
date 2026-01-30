@@ -1,9 +1,26 @@
 @media (min-width: 800px) {
 
-  main {
-    max-width: 1200px;
-    margin: auto;
+  /* show normal nav */
+  nav {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    width: auto;
   }
+
+  nav a {
+    margin-left: 1rem;
+  }
+
+  /* hide hamburger */
+  #menuBtn {
+    display: flex!important;
+  }
+
+  main { 
+    max-width: 1200px; 
+    margin: auto; 
+  } 
 
   .gallery {
     grid-template-columns: repeat(3, 1fr);
