@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+nav {
+  display: flex;
+}
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -19,14 +23,12 @@ header, footer {
   padding: 1rem;
 }
 
-header {
-  position: relative;
-}
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+   position: relative;
   color: #ffffff;
 }
 
@@ -43,6 +45,7 @@ footer {
   color: white;
   cursor: pointer;
   transition: transform 0.3s ease;
+
 }
 
 footer,
@@ -228,15 +231,6 @@ header {
   position: relative;
 }
 
-/* Hamburger */
-#menuBtn {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: block;
-}
 
 /* Mobile nav (hidden by default) */
 #navMenu {
