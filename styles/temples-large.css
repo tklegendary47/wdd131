@@ -33,6 +33,7 @@
 nav a {
   position: relative;
   transition: color 0.3s ease;
+  color: #ffffff;
 }
 
 nav a::after {
