@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zimbabwe</title>
+  <meta name="description" content="Country page for Zimbabwe">
+  <link rel="stylesheet" href="styles/place.css">
+  <script defer src="scripts/place.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Zimbabwe</h1>
+</header>
+
+<main>
+  <section class="hero">
+    <img 
+      src="images/zimbabwe-small.webp"
+      srcset="images/zimbabwe-small.webp 600w,
+              images/zimbabwe-medium.webp 1000w,
+              images/zimbabwe-large.webp 1400w"
+      sizes="100vw"
+      alt="Victoria Falls in Zimbabwe">
+ <div class="mist"></div>
+ <div class="card data">
+      <h2>Data</h2>
+      <p><strong>Area:</strong> 390,757 sq km</p>
+      <p><strong>Population:</strong> 16,665,409</p>
+      <p><strong>Capital:</strong> Harare</p>
+      <p><strong>Languages:</strong> English, Shona, Ndebele</p>
+      <p><strong>Currency:</strong> Zimbabwean Dollar</p>
+      <p><strong>Time Zone:</strong> UTC+2</p>
+      <p><strong>Calling Code:</strong> +263</p>
+      <p><strong>Internet TLD:</strong> .zw</p>
+    </div>
+
+    <div class="card weather">
+      <h2>Weather</h2>
+
+      <!-- SVG icon (mobile only) -->
+      <svg class="weather-icon" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="20" cy="20" r="10" fill="#FDB813"/>
+        <ellipse cx="36" cy="32" rx="16" ry="10" fill="#ccc"/>
+      </svg>
+
+      <p><strong>Temperature:</strong> <span id="temp">10</span> °C</p>
+      <p><strong>Conditions:</strong> Partly Cloudy</p>
+      <p><strong>Wind:</strong> <span id="wind">5</span> km/h</p>
+      <p><strong>Wind Chill:</strong> <span id="chill"></span></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© <span id="currentYear"></span> Takudzwa P. Matimura — Zimbabwe</p>
+  <p>Last Modification: <span id="lastModified"></span></p>
+</footer>
+
+</body>
+</html>

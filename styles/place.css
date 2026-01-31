@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f2f7f9;
+  color: #04364a;
+}
+
+/* HEADER & FOOTER (waterfall colors) */
+header, footer {
+  background: linear-gradient(to right, #0a3d62, #1e6f8b);
+  color: white;
+  padding: 1.5rem;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* HERO IMAGE */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: waterfallFlow 25s linear infinite alternate;
+}
+
+/* MIST LAYER */
+.mist {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.25) 0%, transparent 40%),
+    radial-gradient(circle at 70% 40%, rgba(255,255,255,0.2) 0%, transparent 45%),
+    radial-gradient(circle at 40% 70%, rgba(255,255,255,0.15) 0%, transparent 40%);
+  animation: mistDrift 18s linear infinite;
+  pointer-events: none;
+}
+
+/* RAINBOW SPRAY (STRONGER) */
+.mist::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg,
+      rgba(255,0,0,0.15),
+      rgba(255,165,0,0.15),
+      rgba(255,255,0,0.15),
+      rgba(0,255,0,0.15),
+      rgba(0,0,255,0.15),
+      rgba(138,43,226,0.15));
+  mix-blend-mode: screen;
+  animation: rainbowShift 8s ease-in-out infinite alternate;
+}
+
+@keyframes rainbowShift {
+  from { opacity: .3; }
+  to { opacity: .8; }
+}
+
+
+/* WATER DROPLETS */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(255,255,255,0.4) 2px, transparent 3px),
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.3) 2px, transparent 3px),
+    radial-gradient(circle at 60% 0%, rgba(255,255,255,0.35) 2px, transparent 3px),
+    radial-gradient(circle at 80% 0%, rgba(255,255,255,0.25) 2px, transparent 3px);
+  background-size: 200px 200px;
+  animation: droplets 6s linear infinite;
+  pointer-events: none;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.88);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card h2 {
+  background: #1e6f8b;
+  color: white;
+  padding: .5rem;
+  border-radius: 6px;
+}
+
+/* SVG ICON (mobile only) */
+.weather-icon {
+  width: 60px;
+  margin: .5rem auto;
+}
+
+/* PSEUDO ELEMENT EMOTICON (desktop only) */
+@media (min-width: 700px) {
+  .weather h2::after {
+    content: " 💧";
+  }
+}
+
+/* DESKTOP OVERLAY */
+@media (min-width: 700px) {
+  .card {
+    position: absolute;
+    width: 260px;
+  }
+
+  .data {
+    top: 20px;
+    left: 20px;
+  }
+
+  .weather {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .weather-icon {
+    display: none;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes mistDrift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-80px); }
+}
+
+
+@keyframes droplets {
+  from { background-position-y: 0; }
+  to { background-position-y: 200px; }
+}
+
+@keyframes waterfallFlow {
+  from { transform: scale(1.05) translateY(0); }
+  to { transform: scale(1.05) translateY(-25px); }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  .mist,
+  .hero::after,
+  .hero img,
+  .card {
+    animation: none;
+    transition: none;
+  }
+}
