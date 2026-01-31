@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
  
+<<<<<<< HEAD
   // Dynamic year
   document.getElementById("currentYear").textContent = new Date().getFullYear();
   // Footer last modified
@@ -56,6 +57,42 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
+=======
+  // Footer last modified
+document.getElementById("lastModified").textContent = document.lastModified;
+
+// Intersection Observer for reveal animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+/* ===== PARTICLE BACKGROUND ===== */
+const canvas = document.createElement("canvas");
+canvas.style.position = "fixed";
+canvas.style.top = 0;
+canvas.style.left = 0;
+canvas.style.zIndex = -2;
+document.body.appendChild(canvas);
+
+const ctx = canvas.getContext("2d");
+let particles = [];
+
+function resize() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+>>>>>>> a5d19ae25d37a4db40b36f6802aeaa7ebc19dc98
 for (let i = 0; i < 70; i++) {
   particles.push({
     x: Math.random() * canvas.width,
