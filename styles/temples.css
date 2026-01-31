@@ -28,22 +28,12 @@ header {
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
-<<<<<<< HEAD
-=======
-}
-
-nav a {
-   color: #ffffff;
-  text-decoration: none;
-  margin-left: 1rem;
->>>>>>> a5d19ae25d37a4db40b36f6802aeaa7ebc19dc98
 }
 
 footer {
   text-align: center;
 }
 
-<<<<<<< HEAD
 /* ===== HAMBURGER BUTTON ===== */
 #menuBtn {
   display: block;
@@ -55,8 +45,6 @@ footer {
   transition: transform 0.3s ease;
 }
 
-=======
->>>>>>> a5d19ae25d37a4db40b36f6802aeaa7ebc19dc98
 footer,
 footer p,
 footer a {
@@ -234,7 +222,6 @@ figcaption {
   }
 }
 
-<<<<<<< HEAD
 /* ===== NAV RESET (GUARANTEED WORKING) ===== */
 
 header {
@@ -278,10 +265,4 @@ header {
   font-weight: 600;
   opacity: 1 !important;
   visibility: visible !important;
-=======
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
->>>>>>> a5d19ae25d37a4db40b36f6802aeaa7ebc19dc98
 }

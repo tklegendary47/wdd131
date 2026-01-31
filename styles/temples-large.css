@@ -27,7 +27,6 @@
     grid-template-columns: repeat(3, 1fr);
     max-width: 1100px;
   }
-<<<<<<< HEAD
 }
 
 /* ===== DESKTOP NAV LINK ANIMATION ===== */
@@ -51,7 +50,3 @@ nav a:hover::after,
 nav a:focus::after {
   width: 100%;
 }
-=======
-
-}
->>>>>>> a5d19ae25d37a4db40b36f6802aeaa7ebc19dc98
