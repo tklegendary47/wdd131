@@ -225,11 +225,6 @@ figcaption {
   }
 }
 
-/* ===== NAV RESET (GUARANTEED WORKING) ===== */
-
-header {
-  position: relative;
-}
 
 
 /* Mobile nav (hidden by default) */
