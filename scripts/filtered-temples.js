@@ -3,6 +3,15 @@ console.log("filtered-temples.js loaded");
 // =======================
 // TEMPLE DATA (9 TOTAL)
 // =======================
+const menuBtn = document.querySelector("#menuBtn");
+const navMenu = document.querySelector("#navMenu");
+
+menuBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
+
+
+
 const temples = [
   {
     templeName: "Aba Nigeria",
