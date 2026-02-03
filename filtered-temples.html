@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="author" content="Takudzwa P. Matimura">
+  <meta charset="UTF-8"> <meta
+  name="description"
+  content="A responsive temple photo gallery featuring sacred architecture, interactive filters, and scroll animations by Takudzwa P. Matimura."
+>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Album | WDD131</title>
+
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;600&display=swap"
+  rel="stylesheet"
+>
+
+
+  <script src="scripts/filtered-temples.js" defer></script>
+</head>
+
+<body>
+<header>
+  <h1>Temple Album</h1>
+
+<nav id="navMenu" aria-label="Main navigation">
+
+  <a href="#">Home</a>
+  <a href="#" data-filter="old">Old</a>
+  <a href="#" data-filter="new">New</a>
+  <a href="#" data-filter="large">Large</a>
+  <a href="#" data-filter="small">Small</a>
+</nav>
+  <button id="menuBtn" aria-label="Toggle navigation menu">☰</button>
+</header>
+
+<!-- 🎬 HERO SECTION -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2>Temples of Peace</h2>
+    <p>A digital temple museum</p>
+  </div>
+</section>
+
+<!-- 🌌 PARALLAX LAYER -->
+<div class="parallax"></div>
+
+<!-- 🎛 FILTER BUTTONS -->
+<section class="filters">
+  <button class="active" data-filter="all">All</button>
+  <button data-filter="old">Old</button>
+  <button data-filter="new">New</button>
+  <button data-filter="large">Large</button>
+  <button data-filter="small">Small</button>
+</section>
+
+
+<main>
+<section class="gallery" id="templeCards"></section>
+
+   
+  </section>
+</main>
+
+<footer>
+ <p>© <span id="currentYear"></span> Takudzwa P. Matimura — WDD 131</p>
+  <p>Last Modification: <span id="lastModified"></span></p>
+</footer>
+
+</body>
+</html>
