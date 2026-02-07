@@ -82,3 +82,25 @@
       font-size: 0.9rem;
       color: #555;
     }
+
+
+    .color-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+.red {
+  background-color: #B22222;
+}
+
+.charcoal {
+  background-color: #333333;
+}
+
+.offwhite {
+  background-color: #F9F9F9;
+}
