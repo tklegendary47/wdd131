@@ -1,0 +1,132 @@
+:root {
+  --bg-main:#0b1020;
+  --bg-soft:#0f172a;
+  --card:#ffffff;
+  --text:#111827;
+  --accent:#2563eb;
+  --neon:#38bdf8;
+  --star:#fbbf24;
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(circle at top, var(--bg-soft), var(--bg-main));
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* PARALLAX */
+.parallax {
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(56,189,248,.15), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(37,99,235,.15), transparent 40%);
+  animation: drift 18s linear infinite alternate;
+  z-index:-1;
+}
+@keyframes drift {
+  from { transform:translateY(0); }
+  to { transform:translateY(-60px); }
+}
+
+/* NAV */
+nav {
+  position:sticky;
+  top:0;
+  background:rgba(15,23,42,.85);
+  backdrop-filter:blur(14px);
+  padding:1rem 2rem;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* MAIN */
+main {
+  display:flex;
+  justify-content:center;
+  padding:4rem 1rem;
+}
+
+.card {
+  background:var(--card);
+  max-width:520px;
+  width:100%;
+  padding:2.5rem;
+  border-radius:20px;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+.card.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* FORM */
+h1 { text-align:center; color:var(--accent); }
+
+label { display:block; margin-top:1.2rem; }
+.required { color:#dc2626; }
+
+input, select, textarea {
+  width:100%;
+  padding:.7rem;
+  margin-top:.4rem;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px rgba(37,99,235,.25);
+}
+
+/* STARS */
+.stars {
+  display:flex;
+  flex-direction:row-reverse;
+  justify-content:flex-end;
+}
+.stars input { display:none; }
+.stars label {
+  font-size:2rem;
+  cursor:pointer;
+  color:#9ca3af;
+}
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+  color:var(--star);
+}
+
+/* BUTTON */
+button {
+  margin-top:2rem;
+  width:100%;
+  padding:.9rem;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--neon));
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  transition:.25s;
+}
+button:hover {
+  transform:translateY(-3px);
+  box-shadow:0 20px 50px rgba(56,189,248,.6);
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  font-size:.8rem;
+  color:#c7d2fe;
+  padding:2rem;
+}
