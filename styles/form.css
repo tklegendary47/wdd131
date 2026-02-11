@@ -183,11 +183,15 @@ fieldset {
     transform 0.15s ease,
     color 0.15s ease,
     text-shadow 0.15s ease;
+
+
+
 }
 
 .stars label:hover {
   transform: scale(1.2);
   text-shadow: 0 0 10px rgba(59,130,246,0.6);
+
 }
 
 
@@ -229,17 +233,6 @@ fieldset label {
 fieldset label:hover {
   transform: translateX(2px);
 }
-
-.stars label {
-  transition: 
-    transform 0.15s ease,
-    color 0.15s ease;
-}
-
-.stars label:hover {
-  transform: scale(1.2);
-}
-
 
 
 footer {
