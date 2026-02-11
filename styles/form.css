@@ -33,14 +33,16 @@ header nav span {
   text-transform: uppercase;
 }
 
-.features label {
-  opacity: 0;
-  transform: translateY(15px);
+.feature-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
 }
 
-.features label.visible {
-  opacity: 1;
-  transform: translateY(0);
+.feature-item label {
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .site-footer::after {
@@ -140,13 +142,21 @@ label {
   color:#dc2626;
 }
 
-input, select, textarea {
-  width:100%;
-  padding:.7rem;
-  margin-top:.4rem;
-  border-radius:8px;
-  border:1px solid #d1d5db;
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background: #3e4665;
+  color: #f8fafc;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    border-color 0.15s ease;
 }
+
 
 fieldset {
   border:none;
@@ -159,16 +169,27 @@ fieldset {
   justify-content:flex-end;
 }
 .stars input { display:none; }
-.stars label {
-  font-size:2rem;
-  cursor:pointer;
-  color:#9ca3af;
-}
+
 .stars input:checked ~ label,
 .stars label:hover,
 .stars label:hover ~ label {
   color:var(--star);
 }
+
+.stars label {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease,
+    text-shadow 0.15s ease;
+}
+
+.stars label:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px rgba(59,130,246,0.6);
+}
+
 
 button {
   margin-top: 2rem;
