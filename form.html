@@ -1,67 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="WDD 131 Product Review Form">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product Review | WDD 131</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="A professional and accessible product review form built for WDD 131, featuring JavaScript-driven product selection and localStorage tracking.">
+  <meta name="author" content="Takudzwa P. Matimura">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Review | WDD 131</title>
 
-<link rel="stylesheet" href="styles/form.css">
-<script defer src="scripts/form.js"></script>
+  <link rel="stylesheet" href="styles/form.css">
+  <script defer src="scripts/form.js"></script>
 </head>
 
 <body>
-<div class="parallax"></div>
 
-<nav>
-  <span>WDD 131</span>
-  <a href="#form">Review</a>
-</nav>
+<header>
+  <nav>
+    <span>WDD 131</span>
+    <a href="#form">Review</a>
+  </nav>
+</header>
 
 <main>
-<section class="card" id="card">
+  <section class="card" id="card">
 
-<form id="form" method="get" action="review.html">
+    <form id="form" method="get" action="review.html">
 
-<h1>Product Review</h1>
+      <h1>Product Review</h1>
 
-<label>Full Name <span class="required">*</span></label>
-<input type="text" name="name" required>
+      <label for="name">Full Name <span class="required">*</span></label>
+      <input id="name" type="text" name="name" required>
 
-<label>Email Address <span class="required">*</span></label>
-<input type="email" name="email" required>
+      <label for="email">Email Address <span class="required">*</span></label>
+      <input id="email" type="email" name="email" required>
 
-<label>Product <span class="required">*</span></label>
-<select id="product" name="product" required>
-  <option value="" disabled selected hidden>Select a product</option>
-</select>
+      <label for="product">Product Name <span class="required">*</span></label>
+      <select id="product" name="product" required>
+        <option value="" disabled selected hidden>Select a product</option>
+      </select>
 
-<label>Overall Rating <span class="required">*</span></label>
-<div class="stars">
-  <input id="r5" type="radio" name="rating" value="5" required><label for="r5">★</label>
-  <input id="r4" type="radio" name="rating" value="4"><label for="r4">★</label>
-  <input id="r3" type="radio" name="rating" value="3"><label for="r3">★</label>
-  <input id="r2" type="radio" name="rating" value="2"><label for="r2">★</label>
-  <input id="r1" type="radio" name="rating" value="1"><label for="r1">★</label>
-</div>
+      <fieldset>
+        <legend>Overall Rating <span class="required">*</span></legend>
+        <div class="stars">
+          <input id="r5" type="radio" name="rating" value="5" required><label for="r5">★</label>
+          <input id="r4" type="radio" name="rating" value="4" required><label for="r4">★</label>
+          <input id="r3" type="radio" name="rating" value="3" required><label for="r3">★</label>
+          <input id="r2" type="radio" name="rating" value="2" required><label for="r2">★</label>
+          <input id="r1" type="radio" name="rating" value="1" required><label for="r1">★</label>
+        </div>
+      </fieldset>
 
-<label>Date Installed <span class="required">*</span></label>
-<input type="date" name="date" required>
+      <label for="date">Date Installed <span class="required">*</span></label>
+      <input id="date" type="date" name="date" required>
 
-<label>Written Review</label>
-<textarea name="review" rows="4"></textarea>
+     <fieldset class="features">
+  <legend>Features Used</legend>
 
-<button type="submit">Submit Review</button>
+  <label>
+    <span>Durability</span>
+    <input type="checkbox" name="features" value="durability">
+  </label>
 
-</form>
+  <label>
+    <span>Design</span>
+    <input type="checkbox" name="features" value="design">
+  </label>
 
-</section>
+  <label>
+    <span>Performance</span>
+    <input type="checkbox" name="features" value="performance">
+  </label>
+
+  <label>
+    <span>Ease of Use</span>
+    <input type="checkbox" name="features" value="ease">
+  </label>
+</fieldset>
+
+
+      <label for="review">Written Review</label>
+      <textarea id="review" name="review" rows="4"></textarea>
+
+      <button type="submit">Submit Review</button>
+
+    </form>
+
+  </section>
 </main>
 
-<footer>
-<p>© <span id="year"></span> Takudzwa P. Matimura</p>
-<p>WDD 131 – Dynamic Web Fundamentals | BYU-Idaho</p>
-<p>Last Modified: <span id="modified"></span></p>
+<footer class="site-footer">
+  <p>© <span id="year"></span> Takudzwa P. Matimura</p>
+  <p>WDD 131 – Dynamic Web Fundamentals | BYU-Idaho</p>
+  <p>Last Modified: <span id="modified"></span></p>
 </footer>
 
 </body>

@@ -1,51 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thank You</title>
-<link rel="stylesheet" href="styles/form.css">
-<script>
-  const stats = JSON.parse(localStorage.getItem("reviewStats")) || {
-    count: 0,
-    lastSubmitted: null,
-    history: []
-  };
-
-  const now = new Date();
-  const today = now.toISOString().split("T")[0];
-
-  // Prevent reload inflation
-  if (!sessionStorage.getItem("counted")) {
-    stats.count++;
-    stats.lastSubmitted = now.toISOString();
-    stats.history.push(today);
-
-    localStorage.setItem("reviewStats", JSON.stringify(stats));
-    sessionStorage.setItem("counted", "true");
-  }
-
-  window.onload = () => {
-    document.getElementById("count").textContent =
-      `You have submitted ${stats.count} review${stats.count !== 1 ? "s" : ""}.`;
-
-    document.getElementById("last").textContent =
-      `Last submission: ${new Date(stats.lastSubmitted).toLocaleString()}`;
-  };
-</script>
-
-
+  <meta charset="UTF-8">
+  <meta name="description" content="Thank you page confirming successful product review submission.">
+  <meta name="author" content="Takudzwa P. Matimura">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <link rel="stylesheet" href="styles/form.css">
 </head>
 
 <body>
-<main>
-<section class="card visible">
-  <h1>✨ Thank You!</h1>
-<p id="count"></p>
-<p id="last" style="margin-top:0.75rem; font-size:0.9rem; color:#6b7280;"></p>
 
-  <a href="form.html"><button>Submit Another Review</button></a>
-</section>
+<main>
+  <section class="card">
+    <h1>Thank You!</h1>
+    <p id="count"></p>
+    <a href="form.html"><button>Submit Another Review</button></a>
+  </section>
 </main>
+
+<script>
+  let count = Number(localStorage.getItem("reviews")) || 0;
+  localStorage.setItem("reviews", ++count);
+
+  document.getElementById("count").textContent =
+    `You have submitted ${count} review${count !== 1 ? "s" : ""}.`;
+
+document.querySelector(".site-footer")
+  .addEventListener("click", e => {
+    if (e.shiftKey) {
+      localStorage.removeItem("reviews");
+      localStorage.removeItem("lastReview");
+      alert("Dev reset complete 🚀");
+    }
+  });
+
+
+</script>
+
 </body>
 </html>
