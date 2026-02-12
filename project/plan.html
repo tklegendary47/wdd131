@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Takudzwa P. Matimura">
+  <meta name="description" content="Plan your dream Japan adventure with Japan Uncharted’s interactive trip planner.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="credits" content="Images and references credited on references.html">
+
+  <title>Japan Uncharted | Plan Your Trip</title>
+  <link rel="stylesheet" href="project-styles/main.css">
+  <script defer src="project-scripts/main.js"></script>
+</head>
+
+<body>
+
+<header>
+  <div class="site-branding">
+    <h1>Japan Uncharted</h1>
+    <p class="tagline">Design Your Adventure</p>
+  </div>
+
+  <nav aria-label="Primary navigation">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="plan.html" aria-current="page">Plan Your Trip</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h2>Create Your Personalized Japan Journey</h2>
+    <p>
+      Tell us what excites you most, and we’ll help you shape a travel experience
+      that matches your interests.
+    </p>
+
+  <img
+    src="images/okinawa.jpg"
+    alt="Tropical beach scenery in Okinawa, Japan"
+    loading="lazy">
+
+  </section>
+
+  <section class="features">
+    <h2>Trip Planner</h2>
+
+    <form id="trip-form">
+      <fieldset>
+        <legend>Traveler Information</legend>
+
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="month">Preferred Travel Month</label>
+        <select id="month" name="month" required>
+          <option value="">Select a month</option>
+          <option value="Spring">Spring</option>
+          <option value="Summer">Summer</option>
+          <option value="Autumn">Autumn</option>
+          <option value="Winter">Winter</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Travel Interests</legend>
+
+        <label>
+          <input type="checkbox" name="interests" value="Cities">
+          Cities & Culture
+        </label>
+
+        <label>
+          <input type="checkbox" name="interests" value="Food">
+          Food Experiences
+        </label>
+
+        <label>
+          <input type="checkbox" name="interests" value="Pop Culture">
+          Pop Culture & Events
+        </label>
+
+        <label>
+          <input type="checkbox" name="interests" value="Nature">
+          Nature & Scenery
+        </label>
+      </fieldset>
+
+      <button type="submit" class="cta-button">Build My Trip</button>
+    </form>
+
+    <section id="trip-output" aria-live="polite">
+      <!-- JavaScript-generated content will appear here -->
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Japan Uncharted | Takudzwa P. Matimura</p>
+  <p><a href="references.html">View References & Credits</a></p>
+</footer>
+
+</body>
+</html>
