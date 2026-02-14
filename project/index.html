@@ -11,10 +11,12 @@
 
   <title>Japan Uncharted | Home</title>
 
-  <link rel="stylesheet" href="project-styles/main.css">
+  <link rel="stylesheet" href="styles/main.css">
+    <script defer src="scripts/main.js"></script>
 </head>
 
-<body>
+<body class="home">
+
 
   <!-- ================= HEADER ================= -->
   <header>
@@ -37,18 +39,23 @@
   <main>
 
     <!-- HERO SECTION -->
-    <section class="hero">
-      <h2> <img 
-  src="project-images/tokyo-skyline.jpg" 
-  alt="Tokyo skyline at night with illuminated buildings"
-  loading="lazy">
-Your Journey Into Japan Starts Here</h2>
-      <p>
-        Discover cities, flavors, and experiences that go beyond guidebooks.
-        Japan Uncharted helps you explore Japan with curiosity, confidence, and excitement.
-      </p>
-      <a href="explore.html" class="cta-button">Start Exploring</a>
-    </section>
+<section class="hero">
+  <h2>Your Journey Into Japan Starts Here</h2>
+
+
+  <p id="type-text">
+    Discover cities, flavors, and experiences that go beyond guidebooks.
+    Japan Uncharted helps you explore Japan with curiosity, confidence, and excitement.
+  </p>
+
+
+
+  <a href="explore.html" class="cta-button">
+  Start Exploring <span class="arrow">→</span>
+</a>
+
+</section>
+
 
     <!-- FEATURE SECTION -->
     <section class="features">
@@ -87,10 +94,8 @@ Your Journey Into Japan Starts Here</h2>
 
   <!-- ================= FOOTER ================= -->
   <footer>
-    <p>&copy; 2026 Japan Uncharted | Takudzwa P. Matimura</p>
-    <p>
-      <a href="references.html">View References & Credits</a>
-    </p>
+  <p>© <span id="currentYear"></span> Japan Uncharted | Takudzwa P. Matimura</p>
+
   </footer>
 
 </body>

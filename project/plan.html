@@ -8,11 +8,12 @@
   <meta name="credits" content="Images and references credited on references.html">
 
   <title>Japan Uncharted | Plan Your Trip</title>
-  <link rel="stylesheet" href="project-styles/main.css">
-  <script defer src="project-scripts/main.js"></script>
+  <link rel="stylesheet" href="styles/main.css">
+  <script defer src="scripts/main.js"></script>
 </head>
 
-<body>
+<body class="plan-page">
+
 
 <header>
   <div class="site-branding">
@@ -39,71 +40,139 @@
       that matches your interests.
     </p>
 
-  <img
-    src="images/okinawa.jpg"
-    alt="Tropical beach scenery in Okinawa, Japan"
-    loading="lazy">
-
   </section>
 
   <section class="features">
     <h2>Trip Planner</h2>
 
-    <form id="trip-form">
-      <fieldset>
-        <legend>Traveler Information</legend>
 
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
+    <div class="progress-bar">
+  <div class="progress"></div>
+</div>
 
-        <label for="month">Preferred Travel Month</label>
-        <select id="month" name="month" required>
-          <option value="">Select a month</option>
-          <option value="Spring">Spring</option>
-          <option value="Summer">Summer</option>
-          <option value="Autumn">Autumn</option>
-          <option value="Winter">Winter</option>
-        </select>
-      </fieldset>
 
-      <fieldset>
-        <legend>Travel Interests</legend>
+<form id="trip-form">
 
-        <label>
-          <input type="checkbox" name="interests" value="Cities">
-          Cities & Culture
-        </label>
+  <fieldset>
+    <legend>Traveler Information</legend>
 
-        <label>
-          <input type="checkbox" name="interests" value="Food">
-          Food Experiences
-        </label>
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required>
 
-        <label>
-          <input type="checkbox" name="interests" value="Pop Culture">
-          Pop Culture & Events
-        </label>
+    <label for="month">Preferred Travel Season</label>
+    <select id="month" name="month" required>
+      <option value="">Select a season</option>
+      <option value="Spring">Spring (Cherry Blossoms)</option>
+      <option value="Summer">Summer (Festivals & Beaches)</option>
+      <option value="Autumn">Autumn (Fall Colors)</option>
+      <option value="Winter">Winter (Snow & Hot Springs)</option>
+    </select>
 
-        <label>
-          <input type="checkbox" name="interests" value="Nature">
-          Nature & Scenery
-        </label>
-      </fieldset>
+    <label for="trip-type">Type of Trip</label>
+    <select id="trip-type" name="tripType" required>
+      <option value="">Select trip type</option>
+      <option value="Solo Adventure">Solo Adventure</option>
+      <option value="Couples Getaway">Couples Getaway</option>
+      <option value="Family Vacation">Family Vacation</option>
+      <option value="Friends Trip">Friends Trip</option>
+    </select>
+  </fieldset>
 
-      <button type="submit" class="cta-button">Build My Trip</button>
-    </form>
+  <fieldset>
+    <legend>Trip Details</legend>
+    <label for="currency">Currency</label>
+<select id="currency" name="currency">
+  <option value="USD">USD ($)</option>
+  <option value="JPY">JPY (¥)</option>
+</select>
 
-    <section id="trip-output" aria-live="polite">
-      <!-- JavaScript-generated content will appear here -->
-    </section>
+
+    <label for="duration">Trip Length (days)</label>
+    <input type="number" id="duration" name="duration" min="3" max="30" required>
+
+    <label for="budget">Estimated Budget (USD)</label>
+    <select id="budget" name="budget" required>
+      <option value="">Select budget range</option>
+      <option value="Budget ($800–$1500)">Budget ($800–$1500)</option>
+      <option value="Mid-range ($1500–$3000)">Mid-range ($1500–$3000)</option>
+      <option value="Luxury ($3000+)">Luxury ($3000+)</option>
+    </select>
+
+    <label for="stay">Accommodation Style</label>
+    <select id="stay" name="stay" required>
+      <option value="">Select accommodation</option>
+      <option value="Hostels & Capsule Hotels">Hostels & Capsule Hotels</option>
+      <option value="Business & Boutique Hotels">Business & Boutique Hotels</option>
+      <option value="Traditional Ryokan">Traditional Ryokan</option>
+      <option value="Luxury Hotels">Luxury Hotels</option>
+    </select>
+  </fieldset>
+
+<fieldset>
+  <legend>Travel Interests</legend>
+
+<label class="checkbox-label">
+  <input type="checkbox" name="interests" value="Cities & Culture">
+  <span class="custom-checkbox"></span>
+  <span class="checkbox-text">Cities & Culture</span>
+</label>
+
+<label class="checkbox-label">
+  <input type="checkbox" name="interests" value="Food Experiences">
+  <span class="custom-checkbox"></span>
+  <span class="checkbox-text">Food Experiences</span>
+</label>
+
+<label class="checkbox-label">
+  <input type="checkbox" name="interests" value="Pop Culture & Events">
+  <span class="custom-checkbox"></span>
+  <span class="checkbox-text">Pop Culture & Events</span>
+</label>
+
+<label class="checkbox-label">
+  <input type="checkbox" name="interests" value="Nature & Scenery">
+  <span class="custom-checkbox"></span>
+  <span class="checkbox-text">Nature & Scenery</span>
+</label>
+
+
+</fieldset>
+
+
+  <button type="submit" class="cta-button">Build My Trip Plan</button>
+
+</form>
+
+
+<section id="trip-output" aria-live="polite">
+  <!-- JavaScript-generated content will appear here -->
+</section>
+
+<!-- ADD NEW STUFF HERE -->
+
+<p><strong>Estimated Cost:</strong> <span id="cost">$0</span></p>
+
+<button type="button" id="download-btn" class="cta-button">
+  Download Plan (PDF)
+</button>
+
+<button id="pay-btn" class="cta-button">
+  Proceed to Payment
+</button>
+
+<div id="payment-msg"></div>
+
+<div id="map-preview">
+  <img src="images/japan-map.jpg" alt="Map of Japan">
+</div>
+
 
   </section>
 
 </main>
 
 <footer>
-  <p>&copy; 2026 Japan Uncharted | Takudzwa P. Matimura</p>
-  <p><a href="references.html">View References & Credits</a></p>
+  <p>© <span id="currentYear"></span> Japan Uncharted | Takudzwa P. Matimura</p>
 </footer>
 
 </body>
