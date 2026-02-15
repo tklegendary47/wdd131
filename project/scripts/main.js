@@ -161,7 +161,7 @@ if (downloadBtn) {
 const textEl = document.getElementById("type-text");
 
 if (textEl) {
-  const fullText = textEl.dataset.text;
+ const fullText = textEl.textContent.trim();
   let index = 0;
 
   function typeWriter() {
