@@ -232,91 +232,55 @@ nav {
 }
 
 
+/* ===============================
+   CINEMATIC HERO – FINAL VERSION
+   =============================== */
+
 .home .hero {
+  position: relative;
+  min-height: 85vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 4rem 1.5rem;
+
+  color: #ffffff;
+
+  background-image: url("../images/tokyo.jpg");
   background-size: cover;
   background-position: center;
-  animation: heroSlideshow 24s infinite;
-}
+  background-repeat: no-repeat;
 
-/* CROSSFADE WITHOUT OPACITY FLASH */
-@keyframes heroSlideshow {
-  0%, 100% {
-    background-image: url("../images/tokyo.jpg");
-  }
-  33% {
-    background-image: url("../images/okinawa.jpg");
-  }
-  66% {
-    background-image: url("../images/japanese-food.jpg");
-  }
+  overflow: hidden;
 }
-
 
 .home .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
- animation: heroFadeLayer 30s infinite ease-in-out;
- background-size: cover;
-background-position: center;
-filter: brightness(0.9) contrast(1.05);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.45)
+  );
+
   z-index: 0;
-  opacity: 0;
 }
 
-@keyframes heroFadeLayer {
-  0% {
-    background-image: url("../images/okinawa.jpg");
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  20% {
-    background-image: url("../images/japanese-foodo.jpg");
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  40% {
-    background-image: url("../images/tokyo.jpg");
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  60% {
-    background-image: url("../images/anime.jpg");
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 1;
-  }
-
-  80% {
-    background-image: url("../images/mount-fuji.jpg");
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    background-image: url("../images/okinawa.jpg");
-    opacity: 0;
-  }
+.home .hero > * {
+  position: relative;
+  z-index: 2;
 }
+
+
+
+
+
 
 /* ===============================
    REFERENCE PAGE HERO
@@ -562,14 +526,46 @@ input:focus, select:focus {
 }
 
 
-.cta-button {
-  animation: pulse 3s infinite;
-}
-
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(193,18,31,0.5); }
   70% { box-shadow: 0 0 0 20px rgba(193,18,31,0); }
   100% { box-shadow: 0 0 0 0 rgba(193,18,31,0); }
+}
+
+.home .cta-button {
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #C1121F, #FF3C38);
+  color: #fff;
+
+  font-weight: 700;
+  font-size: 1.1rem;
+
+  box-shadow: 0 10px 30px rgba(193, 18, 31, 0.6);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home .cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(193, 18, 31, 0.8);
+}
+
+.home .hero h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  max-width: 18ch;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.home .hero p {
+  font-size: 1.2rem;
+  max-width: 45ch;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 
@@ -616,29 +612,6 @@ input:focus, select:focus {
 }
 
 
-
-.explore-page .hero p {
-  opacity: 0;
-  animation: wormholeFixed 1.6s ease forwards;
-}
-
-@keyframes wormholeFixed {
-  0% {
-    opacity: 0;
-    transform: scale(0.4) rotateX(60deg);
-    filter: blur(6px);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.05) rotateX(0deg);
-    filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
 
 
 .plan-page .hero p {
@@ -748,11 +721,7 @@ input:focus, select:focus {
   }
 }
 
-.hero .cta-button:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 35px rgba(193,18,31,0.7);
-  background: linear-gradient(135deg, #FF3C38, #C1121F);
-}
+
 
 .hero .cta-button::after {
   content: "→";
@@ -832,8 +801,9 @@ input:focus, select:focus {
    =============================== */
 
 .features {
-  padding: 4rem 1.5rem;
+
   background-color: var(--accent-color);
+    padding: 5rem 1.5rem;
 }
 
 
@@ -862,16 +832,6 @@ html {
   white-space: pre-line;
 }
 
-/* blinking cursor */
-#type-text::after {
-  content: "▋";
-  margin-left: 4px;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
 
 /* reveal animation (no cutoff) */
 @keyframes revealText {
