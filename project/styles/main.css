@@ -946,3 +946,23 @@ footer:hover p::after {
   transform: translateY(-2px);
 }
 
+/* Force consistent light header and card backgrounds on mobile */
+@media only screen and (max-width: 767px) {
+
+  header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .feature-card,
+  .card {
+    background-color: #ffffff !important;
+    color: var(--secondary-color) !important;
+  }
+
+  body {
+    background-color: var(--background-color) !important;
+  }
+
+}
+
